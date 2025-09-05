@@ -126,10 +126,11 @@ def caculate_crc16(data_in):
 
 data_in=input('please enter data: ')
 # data_in='0x0000'
+data_in=data_in.replace(" ","").replace("_","")
 data_bit_len=bit_len(data_in)
 data_in=to_decimal(data_in)
 data_in=bin(data_in)[2:]
 data_in='{:0>{}}'.format(data_in,data_bit_len)
-print('data is:\t',data_in)
+print('data is:\t',data_bit_len,'b',data_in)
 caculate_crc5(data_in)
 caculate_crc16(data_in)
